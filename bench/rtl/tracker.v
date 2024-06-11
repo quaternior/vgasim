@@ -131,9 +131,10 @@ module tracker(
     
     always@(posedge CLK or negedge RESET) begin
         if(!RESET) begin
-            pixel_5cnt <= 0;
+            pixel_5cnt = 0;
         end
         else begin
+            pixel_5cnt = 0;
             for(i=0;i<VSIZE;i = i+1) begin
                 for(j=0;j<HSIZE;j = j+1) begin
                      pixel_5cnt = (on_5mat[i][j]) ? pixel_5cnt + 25 : pixel_5cnt;
@@ -144,9 +145,10 @@ module tracker(
     
     always@(posedge CLK or negedge RESET) begin
         if(!RESET) begin
-            pixel_10cnt <= 0;
+            pixel_10cnt = 0;
         end
         else begin
+            pixel_10cnt = 0;
             for(i=0;i<VSIZE/2;i = i+1) begin
                 for(j=0;j<HSIZE/2;j = j+1) begin
                      pixel_10cnt = (on_10mat[i][j]) ? pixel_10cnt + 100 : pixel_10cnt;
