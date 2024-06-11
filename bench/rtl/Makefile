@@ -60,8 +60,7 @@ endif
 VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc
 
 ##ADDFLAG for final
-# NOWARN := --Wno-WARN
-NOWARN := 
+NOWARN := -Wno-WIDTHEXPAND -Wno-UNUSEDSIGNAL -Wno-UNDRIVEN -Wno-BLKSEQ
 
 ## Generic rules
 ## {{{
