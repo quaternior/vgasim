@@ -57,7 +57,10 @@ VERILATOR := verilator
 else
 VERILATOR := $(VERILATOR_ROOT)/bin/verilator
 endif
-VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc --Wno-WARN
+VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc
+
+##ADDFLAG for final
+NOWARN := --Wno-WARN
 
 ## Generic rules
 ## {{{
@@ -65,7 +68,7 @@ VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc --Wno-WARN
 $(VDIRFB)/V%.h:  $(VDIRFB)/V%.cpp
 $(VDIRFB)/V%.cpp: $(VDIRFB)/V%.mk
 $(VDIRFB)/V%.mk: $(FBDIR)/%.v
-	$(VERILATOR) $(VFLAGS) $*.v
+	$(VERILATOR) $(VFLAGS) $*.v $(NOWARN)
 
 $(VDIRFB)/V%__ALL.a: $(VDIRFB)/V%.mk
 	$(SUBMAKE) V$*.mk
