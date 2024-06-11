@@ -81,9 +81,9 @@ module BRAMCtrl(
         hcnt <= 14'd0;
         hDE <= 1;
       end
-      else if (hDE) begin
+      else begin
         hcnt <= hcnt + 14'd1;
-        hDE <= 0;
+        // hDE <= 0;
       end
     end
   end
