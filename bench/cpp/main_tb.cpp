@@ -83,8 +83,8 @@ private:
 		Glib::signal_idle().connect(sigc::mem_fun((*this),&TESTBENCH::on_tick));
 	}
 public:
-
-	TESTBENCH(void) : m_test(false), m_vga(1280, 1024) {
+	// For final project, 480x272
+	TESTBENCH(void) : m_test(false), m_vga(480, 272) {
 		init();
 	}
 
