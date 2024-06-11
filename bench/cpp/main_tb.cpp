@@ -222,7 +222,8 @@ int	main(int argc, char **argv) {
 	if ((trace_file)&&(trace_file[0]))
 		tb->opentrace(trace_file);
 	while(true){
-		Gtk::Main::iteration(tb->m_vga);
+		tb->m_vga.show_all();
+		Gtk::Main::iteration();
 		// Gtk::Main::run(tb->m_vga);
 		printf("%d\n", tb->on_tick());
 	}
