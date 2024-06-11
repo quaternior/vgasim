@@ -58,7 +58,6 @@ module TFTLCDCtrl (
     wire on;
     
     assign RESET = ~nRESET;
-    assign Tpower = 1;
     assign g2mclk = TCLK;
     assign DEimage = hDE & vDE;
     
