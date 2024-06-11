@@ -95,7 +95,7 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 			.R(o_vga_red),
 			.G(o_vga_grn),
 			.B(o_vga_blu)
-	)
+	);
 
 	// Verilator lint_off UNUSED
 	wire	unused;
