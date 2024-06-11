@@ -59,7 +59,7 @@ VERILATOR := $(VERILATOR_ROOT)/bin/verilator
 endif
 VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc
 
-##ADDFLAG for final
+##Ignore all warnings for final
 NOWARN := -Wno-WIDTHEXPAND -Wno-UNUSEDSIGNAL -Wno-UNDRIVEN -Wno-BLKSEQ
 
 ## Generic rules

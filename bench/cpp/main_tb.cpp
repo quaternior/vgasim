@@ -111,7 +111,7 @@ public:
 		if (m_done)
 			return;
 
-		/*
+		
 		// Measure how fast we are actually sending frames
 		if ((m_tickcount & ((1<<28)-1))==0) {
 			double	ticks_per_second = m_tickcount;
@@ -122,7 +122,7 @@ public:
 				ticks_per_second);
 			}
 		}
-		*/
+		
 
 		m_vga((m_core->o_vga_vsync)?1:0, (m_core->o_vga_hsync)?1:0,
 			m_core->o_vga_red,
