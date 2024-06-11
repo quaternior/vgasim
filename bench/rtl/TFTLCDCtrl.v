@@ -125,9 +125,9 @@ module TFTLCDCtrl (
         .BRAMCLK(BRAMCLK),
         .BRAMADDR(BRAMADDR),
         .BRAMDATA(BRAMDATA),
-        .R(BRAM_R),
-        .G(BRAM_G),
-        .B(BRAM_B),
+        // .R(BRAM_R),
+        // .G(BRAM_G),
+        // .B(BRAM_B),
         .Reverse_SW(1'b1),
         .vcnt(vcnt),
         .hcnt(hcnt)

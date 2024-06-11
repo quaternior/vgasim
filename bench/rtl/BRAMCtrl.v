@@ -29,9 +29,9 @@ module BRAMCtrl(
   input BRAMCLK,
   output [17:0] BRAMADDR,
   input [15:0] BRAMDATA,
-  output [7:3] R,
-  output [7:2] G,
-  output [7:3] B,
+  // output [7:3] R,
+  // output [7:2] G,
+  // output [7:3] B,
   output reg [13:0] hcnt,
   output reg [23:0] vcnt,
   input Reverse_SW);
