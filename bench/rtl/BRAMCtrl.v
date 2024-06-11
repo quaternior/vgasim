@@ -77,11 +77,11 @@ module BRAMCtrl(
       //     vcnt <= vcnt + HSIZE;
       end
   
-      if (!hDE) begin
+      if (!Hsync) begin
         hcnt <= 14'd0;
         hDE <= 1;
       end
-      else if (hcnt < HSIZE) begin
+      else if (hDE) begin
         hcnt <= hcnt + 14'd1;
         hDE <= 0;
       end
