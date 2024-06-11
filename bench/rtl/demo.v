@@ -62,7 +62,7 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 	wire			mem_ack, mem_stall;
 	wire	[31:0]		mem_data;
 
-	memdev	#(.LGMEMSZ(AW+2),.DW(BW), .HEXFILE("slide.hex"), .OPT_ROM(1'b1))
+	memdev	#(.LGMEMSZ(AW+2),.DW(BW), .HEXFILE("image_final.hex"), .OPT_ROM(1'b1))
 		memi(i_clk, i_reset,
 			wb_cyc, wb_stb, 1'b0, wb_addr, 32'h0, 4'h0,
 			mem_ack, mem_stall, mem_data);
