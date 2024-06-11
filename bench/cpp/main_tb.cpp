@@ -223,7 +223,7 @@ int	main(int argc, char **argv) {
 		tb->opentrace(trace_file);
 	while(true){
 		Gtk::Main::run(tb->m_vga);
-		tb->on_tick();
+		printf("%d", tb->on_tick());
 	}
 
 	exit(0);
