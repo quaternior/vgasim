@@ -79,7 +79,6 @@ private:
 		m_core->i_test      = (m_test) ? 1 : 0;
 		//
 		m_done = false;
-
 		Glib::signal_idle().connect(sigc::mem_fun((*this),&TESTBENCH::on_tick));
 	}
 public:
@@ -222,7 +221,10 @@ int	main(int argc, char **argv) {
 
 	if ((trace_file)&&(trace_file[0]))
 		tb->opentrace(trace_file);
-	Gtk::Main::run(tb->m_vga);
+	while(true){
+		Gtk::Main::run(tb->m_vga);
+		tb->on_tick();
+	}
 
 	exit(0);
 }
