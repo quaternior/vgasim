@@ -115,9 +115,9 @@ public:
 		// Measure how fast we are actually sending frames
 		if ((m_tickcount & ((1<<28)-1))==0) {
 			double	ticks_per_second = m_tickcount;
-			time_t	seconds_passed = time(NULL)-m_start_time;
+			time_t	seconds_passed = time(NULL);
 			if (seconds_passed != 0) {
-			ticks_per_second /= (double)(time(NULL) - m_start_time);
+			ticks_per_second /= (double)(time(NULL));
 			printf(" ********   %.6f TICKS PER SECOND\n", 
 				ticks_per_second);
 			}
