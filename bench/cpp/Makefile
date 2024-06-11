@@ -153,9 +153,11 @@ endef
 #
 # The "tags" target
 #
-tags:	$(SOURCES) $(HEADERS)
-	@echo "Generating tags"
-	@ctags $(SOURCES) $(HEADERS)
+
+# Final
+# tags:	$(SOURCES) $(HEADERS)
+# 	@echo "Generating tags"
+# 	@ctags $(SOURCES) $(HEADERS)
 
 
 -include $(OBJDIR)/depends.txt
