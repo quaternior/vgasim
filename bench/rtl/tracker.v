@@ -95,14 +95,14 @@ module tracker(
         if(RESET || !initon) begin
             for(i=0;i<VSIZE;i = i+1) begin
                 for(j=0;j<HSIZE;j = j+1) begin
-                    on_5mat[i][j] <= 0;
+                    on_5mat[i][j] = 0;
                 end
             end
         end
         else begin
             for(i=0;i<VSIZE;i = i+1) begin
                 for(j=0;j<HSIZE;j = j+1) begin
-                    on_5mat[i][j] <= (i==row_addr && j==col_addr) ? 1 : on_5mat[i][j];
+                    on_5mat[i][j] = (i==row_addr && j==col_addr) ? 1 : on_5mat[i][j];
                 end
             end
         end
@@ -112,14 +112,14 @@ module tracker(
         if(RESET || !initon) begin
             for(i=0;i<VSIZE/2;i = i+1) begin
                 for(j=0;j<HSIZE/2;j = j+1) begin
-                    on_10mat[i][j] <= 0;
+                    on_10mat[i][j] = 0;
                 end
             end
         end
         else begin
             for(i=0;i<VSIZE/2;i = i+1) begin
                 for(j=0;j<HSIZE/2;j = j+1) begin
-                    on_10mat[i][j] <= (i==row_addr && j==col_addr) ? 1 : on_10mat[i][j];
+                    on_10mat[i][j] = (i==row_addr && j==col_addr) ? 1 : on_10mat[i][j];
                 end
             end
         end

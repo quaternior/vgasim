@@ -24,7 +24,7 @@ module TFTLCDCtrl (
     reg [31:0] simcnt;
     reg [16:0] pixel_cnt;
     wire [1:0] SW;
-    assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
+    assign SW[0] = 1;   //0 : 5pxl, 1 : 10pxl
 
     // always@(posedge CLK) begin
     //     if(~nRESET) begin
