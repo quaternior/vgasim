@@ -57,7 +57,7 @@ VERILATOR := verilator
 else
 VERILATOR := $(VERILATOR_ROOT)/bin/verilator
 endif
-VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc -Wno-USERWARN
+VFLAGS := -Wall --MMD -O3 --trace -y ../../rtl -cc --Wno-WARN
 
 ## Generic rules
 ## {{{
