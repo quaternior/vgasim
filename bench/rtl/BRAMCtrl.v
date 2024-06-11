@@ -67,7 +67,7 @@ module BRAMCtrl(
           vcnt <= (VSIZE-1)*HSIZE;
           vDE <= 1;
         end
-        else(vDE) begin
+        else if(vDE) begin
           vcnt <= vcnt - HSIZE;
           vDE <= 0;
         end
