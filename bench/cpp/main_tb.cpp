@@ -117,7 +117,7 @@ public:
 			double	ticks_per_second = m_tickcount;
 			time_t	seconds_passed = time(NULL);
 			if (seconds_passed != 0) {
-			ticks_per_second /= (double)(time(NULL));
+			ticks_per_second /= (double)(time(NULL) - m_start_time);
 			printf(" ********   %.6f TICKS PER SECOND\n", 
 				ticks_per_second);
 			}
@@ -133,7 +133,7 @@ public:
 	}
 
 	bool	on_tick(void) {
-		for(int i=0; i<100; i++)
+		for(int i=0; i<100000; i++)
 			tick();
 		return true;
 	}
