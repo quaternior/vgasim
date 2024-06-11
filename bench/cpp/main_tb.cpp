@@ -207,10 +207,11 @@ int	main(int argc, char **argv) {
 		}
 	}
 
-	if ((hres != 1280)||(vres != 1024)) {
-		fprintf(stderr, "WARNING: Memory mapped mode not supported for %d x %d, switching to test mode\n", hres, vres);
-		test_data = true;
-	}
+	// In final project, we use 640 x 480
+	// if ((hres != 1280)||(vres != 1024)) {
+	// 	fprintf(stderr, "WARNING: Memory mapped mode not supported for %d x %d, switching to test mode\n", hres, vres);
+	// 	test_data = true;
+	// }
 
 	tb = new TESTBENCH(hres, vres);
 	tb->test_input(test_data);
