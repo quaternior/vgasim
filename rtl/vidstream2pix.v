@@ -149,7 +149,7 @@ module	vidstream2pix #(
 			S_AXIS_HLAST = S_AXIS_TLAST;
 		always @(*)
 			S_AXIS_FRAME = S_AXIS_TUSER;
-	end else begin
+	end else begin : TEMP_OPTUSERELSE
 		always @(*)
 			S_AXIS_HLAST = S_AXIS_TUSER;
 		always @(*)
