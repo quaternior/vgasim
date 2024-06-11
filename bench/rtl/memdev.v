@@ -76,7 +76,7 @@ module	memdev(i_clk, i_reset,
 
 	generate
 	if (EXTRACLOCK == 0)
-	begin
+	begin : EXTRA_LOCK_LOW
 
 		assign	w_wstb = (i_wb_stb)&&(i_wb_we);
 		assign	w_stb  = i_wb_stb;
@@ -84,7 +84,7 @@ module	memdev(i_clk, i_reset,
 		assign	w_data = i_wb_data;
 		assign	w_sel  = i_wb_sel;
 
-	end else begin
+	end else begin : EXTRA_LOCK
 
 		reg		last_wstb, last_stb;
 		always @(posedge i_clk)
