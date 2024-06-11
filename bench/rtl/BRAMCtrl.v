@@ -39,6 +39,7 @@ module BRAMCtrl(
   
   //Simulating
   reg vDE, hDE;
+  reg hDE1d;
   //
   reg DE1d;
   always @ (posedge CLK or posedge RESET)
