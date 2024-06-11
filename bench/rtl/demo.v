@@ -88,7 +88,7 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 	// assign o_vga_blu = o_vga_blu_f;
 	TFTLCDCtrl TFTLCDCtrl_i(
 			.CLK(i_clk),
-			.nRESET(i_reset),
+			.nRESET(~i_reset),
 			.TCLK(i_pixclk),
 			.Hsync(o_vga_hsync),
 			.Vsync(o_vga_vsync),

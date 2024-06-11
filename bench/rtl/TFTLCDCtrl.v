@@ -25,7 +25,7 @@ module TFTLCDCtrl (
     wire [1:0] SW;
     assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
 
-    always@(posedge CLK or negedge nRESET) begin
+    always@(posedge CLK) begin
         if(!nRESET) begin
             simcnt <= 0;
             PushButton[2:0] <= 3'b111;
