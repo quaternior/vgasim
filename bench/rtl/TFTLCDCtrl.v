@@ -19,25 +19,26 @@ module TFTLCDCtrl (
     ); //BRAM Data 16bits
 
     // Temporature variable for final sim
-    reg [2:0] PushButton;
+    // reg [2:0] PushButton;
+    wire [2:0] PushButton = 3'b111;
     reg [31:0] simcnt;
     reg [16:0] pixel_cnt;
     wire [1:0] SW;
     assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
 
-    always@(posedge CLK) begin
-        if(!nRESET) begin
-            simcnt <= 0;
-            PushButton <= 3'b011;
-        end
-        // else if(simcnt>=5) begin
-        //     simcnt <= 0;
-        //     PushButton[0] <= ~PushButton[0];
-        // end
-        // else begin
-        //     simcnt <= simcnt + 1;
-        // end
-    end
+    // always@(posedge CLK) begin
+    //     if(~nRESET) begin
+    //         simcnt <= 0;
+    //         PushButton <= 3'b111;
+    //     end
+    //     else if(simcnt>=5) begin
+    //         simcnt <= 0;
+    //         PushButton[0] <= ~PushButton[0];
+    //     end
+    //     else begin
+    //         simcnt <= simcnt + 1;
+    //     end
+    // end
 
 
     wire g2mclk;

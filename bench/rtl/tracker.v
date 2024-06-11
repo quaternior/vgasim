@@ -53,7 +53,6 @@ module tracker(
             row_addr <= 0;
             col_addr <= 0;
             initon <= 1;
-            RegPushButton <= 3'b111;
         end
         // Right
         else if(!RegPushButton[0]&&PushButton[0])
