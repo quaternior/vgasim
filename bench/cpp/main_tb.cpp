@@ -83,7 +83,7 @@ private:
 	}
 public:
 	// For final project, 480x272
-	TESTBENCH(void) : m_test(false), m_vga(480, 272) {
+	TESTBENCH(void) : m_test(false), m_vga(640, 480) {
 		init();
 	}
 
