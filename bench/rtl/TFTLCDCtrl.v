@@ -3,7 +3,7 @@
 //
 
 module TFTLCDCtrl (
-    input [2:0]PushButton,
+    // input [2:0]PushButton,
     input CLK,
     input nRESET,
     input TCLK,	// TFT-LCD Clock
@@ -22,9 +22,27 @@ module TFTLCDCtrl (
     // output [17:0] BRAMADDR, //BRAM Address
     // input [15:0] BRAMDATA
     ); //BRAM Data 16bits
+
     // Temporature variable for final sim
+    reg [2:0] PushButton;
     wire [1:0] SW;
-    assign Sw[0]
+    assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
+    reg [31:0] simcnt;
+    always@(posedge CLK) begin
+        if(!nRESET) begin
+            simcnt <= 0;
+            PushButton[2:0] <= 3'b111;
+        end
+        else if(simcnt>=5) begin
+            simcnt <= 0;
+            PushButton[0] <= ~PushButton[0];
+        end
+        else begin
+            simcnt <= simcnt + 1;
+        end
+    end
+
+
     // wire g2mclk;
     wire hclk;
     wire [9:0] H_COUNT;
