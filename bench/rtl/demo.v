@@ -56,6 +56,9 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 	output	wire	[7:0]	o_vga_red, o_vga_grn, o_vga_blu;
 	output	wire		o_interrupt;
 
+	// Final
+	wire	[7:0]	o_vga_red_f, o_vga_grn_f, o_vga_blu_f;
+	//
 	wire			wb_cyc, wb_stb;
 	wire	[AW-1:0]	wb_addr;
 	//
@@ -77,9 +80,22 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 			wb_cyc, wb_stb, wb_addr,
 				mem_ack, 1'b0, 1'b0, mem_data,
 			o_vga_vsync, o_vga_hsync,
-				o_vga_red, o_vga_grn, o_vga_blu,
+				o_vga_red_f, o_vga_grn_f, o_vga_blu_f,
 			o_interrupt);
 
+	TFTLCDCtrl TFTLCDCtrl_i(
+			.CLK(i_clk),
+			.nRESRET(i_reset),
+			.Hsync(o_vga_hsync),
+			.Vsync(o_vga_vsync),
+			.BRAM_R(o_vga_red_f),
+			.BRAM_G(o_vga_green_f),
+			.BRAM_B(o_vga_green_f),
+			.BRAMCLK(i_pixclk),
+			.R(o_vga_red),
+			.G(o_vga_grn),
+			.B(o_vga_blu)
+	)
 
 	// Verilator lint_off UNUSED
 	wire	unused;
