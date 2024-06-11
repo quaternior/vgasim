@@ -86,6 +86,7 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 	TFTLCDCtrl TFTLCDCtrl_i(
 			.CLK(i_clk),
 			.nRESET(i_reset),
+			.TCLK(i_clk),
 			.Hsync(o_vga_hsync),
 			.Vsync(o_vga_vsync),
 			.BRAM_R(o_vga_red_f),

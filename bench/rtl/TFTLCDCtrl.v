@@ -9,25 +9,22 @@ module TFTLCDCtrl (
     input TCLK,	// TFT-LCD Clock
     input Hsync,	// TFT-LCD HSYNC
     input Vsync,	// TFT-LCD VSYNC
-    output reg DE_out,	// TFT-LCD Data enable
     input [7:0] BRAM_R, // TFT-LCD Red signal 
     input [7:0] BRAM_G, // TFT-LCD Green signal
     input [7:0] BRAM_B, // TFT-LCD Blue signal
     output [7:0] R, // TFT-LCD Red signal 
     output [7:0] G, // TFT-LCD Green signal
     output [7:0] B, // TFT-LCD Blue signal
-    output Tpower,  // TFT-LCD Backlight On signal
-    // input [1:0] SW,
-    input BRAMCLK, //BRAM Clock
-    // output [17:0] BRAMADDR, //BRAM Address
-    // input [15:0] BRAMDATA
+    input BRAMCLK
     ); //BRAM Data 16bits
 
     // Temporature variable for final sim
     reg [2:0] PushButton;
+    reg [31:0] simcnt;
+    reg [16:0] pixel_cnt;
     wire [1:0] SW;
     assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
-    reg [31:0] simcnt;
+
     always@(posedge CLK) begin
         if(!nRESET) begin
             simcnt <= 0;
@@ -63,7 +60,6 @@ module TFTLCDCtrl (
     assign RESET = ~nRESET;
     assign Tpower = 1;
     assign g2mclk = TCLK;
-    assign DE_out = 1'b1;
     assign DEimage = hDE & vDE;
     
         // always @ (posedge g2mclk or posedge RESET)
@@ -123,8 +119,8 @@ module TFTLCDCtrl (
         .Hsync(Hsync),
         // .DE(DEimage),
         .BRAMCLK(BRAMCLK),
-        .BRAMADDR(BRAMADDR),
-        .BRAMDATA(BRAMDATA),
+        // .BRAMADDR(BRAMADDR),
+        // .BRAMDATA(BRAMDATA),
         // .R(BRAM_R),
         // .G(BRAM_G),
         // .B(BRAM_B),
@@ -140,11 +136,12 @@ module TFTLCDCtrl (
         .RESET(RESET),
         .vcnt(vcnt),
         .hcnt(hcnt),
-        .on(on)
+        .on(on),
+        .SW(SW[0]),
+        .pixel_cnt(pixel_cnt)
     );
 
     assign R = on ? BRAM_R : 8'b0; // black  value
     assign G = on ? BRAM_G : 8'b0;
     assign B = on ? BRAM_B : 8'b0;
-
 endmodule

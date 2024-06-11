@@ -1,5 +1,4 @@
-  `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
 // 
@@ -27,8 +26,6 @@ module BRAMCtrl(
   input Hsync,
   // input DE,
   input BRAMCLK,
-  output [17:0] BRAMADDR,
-  input [15:0] BRAMDATA,
   // output [7:3] R,
   // output [7:2] G,
   // output [7:3] B,
