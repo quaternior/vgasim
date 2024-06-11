@@ -25,7 +25,7 @@ module TFTLCDCtrl (
     wire [1:0] SW;
     assign SW[0] = 0;   //0 : 5pxl, 1 : 10pxl
 
-    always@(posedge CLK) begin
+    always@(posedge CLK or negedge nRESET) begin
         if(!nRESET) begin
             simcnt <= 0;
             PushButton[2:0] <= 3'b111;
@@ -57,7 +57,7 @@ module TFTLCDCtrl (
     wire [13:0]hcnt;
     wire on;
     
-    // assign RESET = ~nRESET;
+    assign RESET = ~nRESET;
     assign g2mclk = TCLK;
     assign DEimage = hDE & vDE;
     
@@ -113,7 +113,7 @@ module TFTLCDCtrl (
     BRAMCtrl f_BRAMCtrl
     (
         .CLK(g2mclk),
-        .RESET(nRESET),
+        .RESET(RESET),
         .Vsync(Vsync),
         .Hsync(Hsync),
         // .DE(DEimage),
@@ -132,7 +132,7 @@ module TFTLCDCtrl (
     (
         .PushButton(PushButton),
         .CLK(g2mclk),
-        .RESET(nRESET),
+        .RESET(RESET),
         .vcnt(vcnt),
         .hcnt(hcnt),
         .on(on),
