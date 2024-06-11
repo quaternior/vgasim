@@ -30,13 +30,13 @@ module TFTLCDCtrl (
             simcnt <= 0;
             PushButton[2:0] <= 3'b111;
         end
-        else if(simcnt>=5) begin
-            simcnt <= 0;
-            PushButton[0] <= ~PushButton[0];
-        end
-        else begin
-            simcnt <= simcnt + 1;
-        end
+        // else if(simcnt>=5) begin
+        //     simcnt <= 0;
+        //     PushButton[0] <= ~PushButton[0];
+        // end
+        // else begin
+        //     simcnt <= simcnt + 1;
+        // end
     end
 
 
