@@ -225,7 +225,7 @@ int	main(int argc, char **argv) {
 	while(true){
 		tb->m_vga.show_all();
 		while (Gtk::Main::events_pending()) {
-                Gtk::Main::iteration();
+			Gtk::Main::iteration();
 		}
 		// Gtk::Main::run(tb->m_vga);
 		printf("%dth loop\n", i++);

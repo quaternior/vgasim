@@ -29,8 +29,8 @@ module tracker(
     output reg on,
     output [16:0] pixel_cnt
     );
-    parameter HSIZE = 96;
-    parameter VSIZE = 54;
+    parameter HSIZE = 640/5;
+    parameter VSIZE = 480/5;
     reg on_5mat [VSIZE-1:0][HSIZE-1:0];
     reg on_10mat [VSIZE/2-1:0][HSIZE/2-1:0];
     reg [8:0] row_addr;

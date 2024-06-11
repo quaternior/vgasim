@@ -83,23 +83,23 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 				o_vga_red_f, o_vga_grn_f, o_vga_blu_f,
 			o_interrupt);
 
-	assign o_vga_red = o_vga_red_f;
-	assign o_vga_grn = o_vga_grn_f;
-	assign o_vga_blu = o_vga_blu_f;
-	// TFTLCDCtrl TFTLCDCtrl_i(
-	// 		.CLK(i_clk),
-	// 		.nRESET(~i_reset),
-	// 		.TCLK(i_pixclk),
-	// 		.Hsync(o_vga_hsync),
-	// 		.Vsync(o_vga_vsync),
-	// 		.BRAM_R(o_vga_red_f),
-	// 		.BRAM_G(o_vga_grn_f),
-	// 		.BRAM_B(o_vga_blu_f),
-	// 		.BRAMCLK(i_pixclk),
-	// 		.R(o_vga_red),
-	// 		.G(o_vga_grn),
-	// 		.B(o_vga_blu)
-	// );
+	// assign o_vga_red = o_vga_red_f;
+	// assign o_vga_grn = o_vga_grn_f;
+	// assign o_vga_blu = o_vga_blu_f;
+	TFTLCDCtrl TFTLCDCtrl_i(
+			.CLK(i_clk),
+			.nRESET(~i_reset),
+			.TCLK(i_pixclk),
+			.Hsync(o_vga_hsync),
+			.Vsync(o_vga_vsync),
+			.BRAM_R(o_vga_red_f),
+			.BRAM_G(o_vga_grn_f),
+			.BRAM_B(o_vga_blu_f),
+			.BRAMCLK(i_pixclk),
+			.R(o_vga_red),
+			.G(o_vga_grn),
+			.B(o_vga_blu)
+	);
 
 	// Verilator lint_off UNUSED
 	wire	unused;
