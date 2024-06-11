@@ -1241,7 +1241,7 @@ module demofull #(
 			&& !S_AXI_ARVALID && !S_AXI_RVALID);
 
 	generate if (OPT_LOCK)
-	begin
+	begin : TEMP_OPTLOCK
 		always @(*)
 			cover(S_AXI_ARESETN && S_AXI_BVALID && S_AXI_BREADY
 				&& S_AXI_BRESP == 2'b01);

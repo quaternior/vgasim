@@ -209,7 +209,7 @@ module	memdev(i_clk, i_reset,
 	end endgenerate
 
 	generate if (EXTRACLOCK == 0)
-	begin
+	begin : TEMP_EXTRALOCK
 		always @(posedge i_clk)
 		if ((!f_past_valid)||($past(i_reset)))
 			assert(!o_wb_ack);

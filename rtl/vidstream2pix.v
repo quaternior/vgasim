@@ -144,7 +144,7 @@ module	vidstream2pix #(
 	// integer			k;
 
 	generate if (OPT_TUSER_IS_SOF)
-	begin
+	begin : TEMP_OPTTUSER
 		always @(*)
 			S_AXIS_HLAST = S_AXIS_TLAST;
 		always @(*)
@@ -529,13 +529,13 @@ module	vidstream2pix #(
 	assign	M_AXIS_TDATA  = pix_data;
 
 	generate if (OPT_TUSER_IS_SOF)
-	begin
+	begin : TEMP_OPTTUSER2
 		always @(*)
 		begin
 			M_AXIS_TLAST  = pix_hlast;	// HLAST
 			M_AXIS_TUSER  = pix_frame;	// SOF
 		end
-	end else begin
+	end else begin : TEMP_OPTTUSERELSE
 		always @(*)
 		begin
 			M_AXIS_TLAST  = pix_frame;	// VLAST

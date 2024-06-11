@@ -430,7 +430,7 @@ module	fwb_master(i_clk, i_reset,
 
 
 	generate if (!F_OPT_RMW_BUS_OPTION)
-	begin
+	begin : TEMP_NOTFOPT
 		// If we aren't waiting for anything, and we aren't issuing
 		// any requests, then then our transaction is over and we
 		// should be dropping the CYC line.
@@ -445,7 +445,7 @@ module	fwb_master(i_clk, i_reset,
 	end endgenerate
 
 	generate if (F_OPT_SHORT_CIRCUIT_PROOF)
-	begin
+	begin : TEMP_FOPT
 		// In many ways, we don't care what happens on the bus return
 		// lines if the cycle line is low, so restricting them to a
 		// known value makes a lot of sense.

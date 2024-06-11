@@ -293,7 +293,7 @@ module skidbuffer #(
 	//
 
 	generate if (!OPT_PASSTHROUGH)
-	begin
+	begin : TEMP_OPTPASS
 
 		always @(posedge i_clk)
 		if (!f_past_valid) // || $past(i_reset))
@@ -315,7 +315,7 @@ module skidbuffer #(
 	//
 	//
 	generate if (!OPT_PASSTHROUGH)
-	begin
+	begin : TEMP_OPTPASS2
 		// Rule #1:
 		//	If registered, then following any reset we should be
 		//	ready for a new request
@@ -406,7 +406,7 @@ module skidbuffer #(
 	//
 `ifdef	SKIDBUFFER
 	generate if (!OPT_PASSTHROUGH)
-	begin
+	begin : TEMP_OPTPASS3
 		reg	f_changed_data;
 
 		initial	f_changed_data = 0;
