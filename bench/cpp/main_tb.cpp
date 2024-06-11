@@ -117,7 +117,7 @@ public:
 			double	ticks_per_second = m_tickcount;
 			time_t	seconds_passed = time(NULL);
 			if (seconds_passed != 0) {
-			ticks_per_second /= (double)(time(NULL) - m_start_time);
+			ticks_per_second /= (double)(time(NULL));
 			printf(" ********   %.6f TICKS PER SECOND\n", 
 				ticks_per_second);
 			}
