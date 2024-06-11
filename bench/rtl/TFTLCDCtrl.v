@@ -43,7 +43,7 @@ module TFTLCDCtrl (
     end
 
 
-    // wire g2mclk;
+    wire g2mclk;
     wire hclk;
     wire [9:0] H_COUNT;
     wire [9:0] V_COUNT;
@@ -64,7 +64,7 @@ module TFTLCDCtrl (
     assign Tpower = 1;
     assign TCLK = g2mclk;
     assign DE_out = 1'b1;
-        assign DEimage = hDE & vDE;
+    assign DEimage = hDE & vDE;
     
         // always @ (posedge g2mclk or posedge RESET)
         // begin
@@ -121,7 +121,7 @@ module TFTLCDCtrl (
         .RESET(RESET),
         .Vsync(Vsync),
         .Hsync(Hsync),
-        .DE(DEimage),
+        // .DE(DEimage),
         .BRAMCLK(BRAMCLK),
         .BRAMADDR(BRAMADDR),
         .BRAMDATA(BRAMDATA),

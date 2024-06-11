@@ -26,7 +26,7 @@ module BRAMCtrl(
   input Vsync,
   input Hsync,
   // input DE,
-  output BRAMCLK,
+  input BRAMCLK,
   output [17:0] BRAMADDR,
   input [15:0] BRAMDATA,
   output [7:3] R,
@@ -93,7 +93,7 @@ module BRAMCtrl(
     end
   end
   
-    assign BRAMCLK = CLK;
+    // assign BRAMCLK = CLK;
     // assign BRAMADDR = vcnt + hcnt;
     // assign R = BRAMDATA[15:11];
     // assign G = BRAMDATA[10:5];
