@@ -28,7 +28,7 @@ module TFTLCDCtrl (
     always@(posedge CLK) begin
         if(!nRESET) begin
             simcnt <= 0;
-            PushButton[2:0] <= 3'b111;
+            PushButton <= 3'b011;
         end
         // else if(simcnt>=5) begin
         //     simcnt <= 0;
