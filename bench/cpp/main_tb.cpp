@@ -165,8 +165,8 @@ int	main(int argc, char **argv) {
 	Verilated::commandArgs(argc, argv);
 	bool	test_data = false, verbose_flag = false;;
 	char	*ptr = NULL, *trace_file = NULL;
-	int	hres = 1280, vres = 1024;
-
+	int	hres = 640, vres = 480;
+	//For final project
 	int	opt;
 	while((opt = getopt(argc, argv, "d:htg:")) != -1) {
 		const char DELIMITERS[] = "x, ";
