@@ -227,7 +227,7 @@ int	main(int argc, char **argv) {
 		Gtk::Main::iteration();
 		// Gtk::Main::run(tb->m_vga);
 		printf("%dth loop\n", i++);
-		tb->on_tick()
+		tb->on_tick();
 	}
 
 	exit(0);
