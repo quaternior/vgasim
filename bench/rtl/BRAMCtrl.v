@@ -75,18 +75,16 @@ module BRAMCtrl(
       //     vcnt <= 18'd0;
       //   else if ((!DE) && (DE1d))
       //     vcnt <= vcnt + HSIZE;
-  
-  
-        if (!hDE) begin
-          hcnt <= 14'd0;
-          hDE <= 1;
-        end
-        else if (hcnt < HSIZE) begin
-          hcnt <= hcnt + 14'd1;
-          hDE <= 0;
-        end
       end
   
+      if (!hDE) begin
+        hcnt <= 14'd0;
+        hDE <= 1;
+      end
+      else if (hcnt < HSIZE) begin
+        hcnt <= hcnt + 14'd1;
+        hDE <= 0;
+      end
     end
   end
   
