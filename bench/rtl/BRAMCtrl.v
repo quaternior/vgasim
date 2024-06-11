@@ -53,6 +53,7 @@ module BRAMCtrl(
     end
     else
     begin
+      hDE1d <= hDE;
       // DE1d <= DE;
       if (Reverse_SW)
       begin
@@ -64,7 +65,7 @@ module BRAMCtrl(
           vcnt <= (VSIZE-1)*HSIZE;
           vDE <= 1;
         end
-        else if(hDE) begin
+        else if(hDE && !hDE1d) begin
           vcnt <= vcnt - HSIZE;
           vDE <= 0;
         end
