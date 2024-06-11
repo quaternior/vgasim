@@ -133,11 +133,11 @@ public:
 	}
 
 	bool	on_tick(void) {
-		// for(int i=0; i<2; i++)
-		// 	tick();
-		while(true){
+		for(int i=0; i<5; i++)
 			tick();
-		}
+		// while(true){
+		// 	tick();
+		// }
 		return true;
 	}
 };
