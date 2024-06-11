@@ -83,9 +83,9 @@ module	demo(i_clk, i_pixclk, i_reset, i_test,
 				o_vga_red_f, o_vga_grn_f, o_vga_blu_f,
 			o_interrupt);
 
-	assign o_vga_red = o_vga_red_f;
-	assign o_vga_grn = o_vga_grn_f;
-	assign o_vga_blu = o_vga_blu_f;
+	// assign o_vga_red = o_vga_red_f;
+	// assign o_vga_grn = o_vga_grn_f;
+	// assign o_vga_blu = o_vga_blu_f;
 	TFTLCDCtrl TFTLCDCtrl_i(
 			.CLK(i_clk),
 			.nRESET(i_reset),
