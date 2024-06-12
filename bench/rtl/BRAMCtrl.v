@@ -74,7 +74,7 @@ module BRAMCtrl(
         else if(VFPcnt < 10) begin
           VFPcnt <= VFPcnt + 1;
         end
-        else if(hDE && !hDE1d) begin
+        else if((VFPcnt >= 10) && (hDE && !hDE1d)) begin
           vcnt <= vcnt - HSIZE;
           vDE <= 0;
         end
@@ -95,7 +95,7 @@ module BRAMCtrl(
       else if (HFPcnt < 16) begin
         HFPcnt <= HFPcnt + 1;
       end
-      else begin
+      else if(HFPcnt >= 16) begin
         hcnt <= hcnt + 14'd1;
         hDE <= 0;
       end
