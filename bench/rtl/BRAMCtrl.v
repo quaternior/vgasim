@@ -69,7 +69,7 @@ module BRAMCtrl(
           vDE <= 1;
           VFPcnt <= 0;
         end
-        else if(VFPcnt < 20) begin
+        else if(VFPcnt < 50) begin
           VFPcnt <= VFPcnt + 1;
         end
         else if(hDE && !hDE1d) begin
