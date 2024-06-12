@@ -40,6 +40,8 @@ module BRAMCtrl(
   //Simulating
   reg vDE, hDE;
   reg hDE1d;
+  reg [5:0] HFPcnt;
+  reg [5:0] VFPcnt;
   //
   reg DE1d;
   always @ (posedge CLK or posedge RESET)
@@ -65,6 +67,10 @@ module BRAMCtrl(
         if (!Vsync) begin
           vcnt <= (VSIZE-1)*HSIZE;
           vDE <= 1;
+          VFPcnt <= 0;
+        end
+        else if(VFPcnt < 10) begin
+          VFPcnt <= VFPcnt + 1;
         end
         else if(hDE && !hDE1d) begin
           vcnt <= vcnt - HSIZE;
@@ -82,6 +88,10 @@ module BRAMCtrl(
       if (!Hsync) begin
         hcnt <= 14'd0;
         hDE <= 1;
+        HFPcnt <= 0;
+      end
+      else (HFPcnt < 16) begin
+        HFPcnt = HFPcnt + 1;
       end
       else begin
         hcnt <= hcnt + 14'd1;
