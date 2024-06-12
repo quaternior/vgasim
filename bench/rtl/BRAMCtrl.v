@@ -52,6 +52,8 @@ module BRAMCtrl(
       vcnt <= 24'd0;
       vDE <= 0;
       hDE <= 0;
+      VFPcnt <= 0;
+      HFPcnt <= 0;
       // DE1d <= 1'b0;
     end
     else
