@@ -91,7 +91,7 @@ module BRAMCtrl(
         HFPcnt <= 0;
       end
       else if (HFPcnt < 16) begin
-        HFPcnt = HFPcnt + 1;
+        HFPcnt <= HFPcnt + 1;
       end
       else begin
         hcnt <= hcnt + 14'd1;
