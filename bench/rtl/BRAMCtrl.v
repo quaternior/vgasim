@@ -90,7 +90,7 @@ module BRAMCtrl(
         hDE <= 1;
         HFPcnt <= 0;
       end
-      else (HFPcnt < 16) begin
+      else if (HFPcnt < 16) begin
         HFPcnt = HFPcnt + 1;
       end
       else begin
